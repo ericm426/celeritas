@@ -1,6 +1,8 @@
 #ifndef PLACEHOLDER_HPP
 #define PLACEHOLDER_HPP
 
-void placeholder();
+#include <string>
+
+std::string placeholder();
 
 #endif

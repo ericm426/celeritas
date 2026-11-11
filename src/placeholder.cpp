@@ -1,6 +1,6 @@
 #include <iostream> 
-#include <placeholder.hpp>
+#include "placeholder.hpp"
 
-void placeholder() {
-    std::cout << "Version: 1.0.0" << std::endl;
+std::string placeholder() {
+    return "Version: 0.1.0";
 }

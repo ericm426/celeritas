@@ -1,0 +1,20 @@
+name: Celeritas Order Book CI
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v7
+            - name: Configure
+              run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug
+            - name: Build 
+              run: cmake --build build
+            - name: Test
+              run: ctest --test-dir build --output-on-failure
